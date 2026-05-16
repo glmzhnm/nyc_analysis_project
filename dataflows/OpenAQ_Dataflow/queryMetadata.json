@@ -1,0 +1,39 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "OpenAQ_Dataflow",
+  "queryGroups": [],
+  "documentLocale": "en-GB",
+  "queriesMetadata": {
+    "Query1": {
+      "queryId": "ef9a1805-e049-4dee-8776-142d1e07e946",
+      "queryName": "Query1",
+      "loadEnabled": false
+    },
+    "Query1_DataDestination": {
+      "queryId": "c8b53b4a-4483-49fa-9902-6a63b0290c94",
+      "queryName": "Query1_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://api.openaq.org/v3/measurements?limit=1000&page=1&api_key=dfffa5c2c33d4a797b573152d3bab9008d2c3e7a3b8bf4a0f420244a1015f93f",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"62b1f1ff-79c1-43fa-8e6f-e0a5863edf38\",\"DatasourceId\":\"13f3a16a-9e02-4180-94e9-838c24cb4c63\"}"
+    },
+    {
+      "path": "https://api.openaq.org/v3/locations?coordinates=40.7128,-74.0060&radius=25000&limit=1000",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"62b1f1ff-79c1-43fa-8e6f-e0a5863edf38\",\"DatasourceId\":\"0ec0366d-4d4d-42ac-b412-bb7cd55a2a9f\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"62b1f1ff-79c1-43fa-8e6f-e0a5863edf38\",\"DatasourceId\":\"58653105-7746-41b1-bb52-26a1872aeefb\"}"
+    }
+  ]
+}
